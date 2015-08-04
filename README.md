@@ -5,8 +5,8 @@ This is a skeleton django project that imports [django-app-lti](https://github.c
 ## Quickstart
 
 ```sh
-$ pip install -r requirements.txt
-$ cd skeleton/
+$ cp django_lti_skeleton/settings/secure.py.example django_lti_skeleton/settings/secure.py
+$ pip install -r django_lti_skeleton/requirements/local.txt
 $ ./manage.py syncdb && ./manage.py migrate
 $ ./manage.py runserver
 ```
