@@ -11,7 +11,7 @@ $ ./manage.py syncdb && ./manage.py migrate
 $ ./manage.py runserver
 ```
 
-1. Go to [http://localhost:8000/lti/config](http://localhost:8000/lti/config) 
-2. Add the tool to Canvas 
+1. Go to [http://localhost:8000/lti/config](http://localhost:8000/lti/config) which should output XML
+2. Add the tool to Canvas via "Paste XML"
 3. Launch the tool in Canvas
 4. If it worked, you should see a "Welcome to my app" message
