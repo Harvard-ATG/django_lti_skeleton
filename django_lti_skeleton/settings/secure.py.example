@@ -1,0 +1,4 @@
+SECURE_SETTINGS = {
+    'django_secret_key': 'k3dtu7d0+jlg5&*3&s1wt8p_en$&kf2e1fd(ka@5xfo@$qv-bh',
+    'enable_debug': True,
+}

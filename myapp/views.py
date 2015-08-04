@@ -22,3 +22,5 @@ def index(request, course_id=None):
     content = 'Welcome to my app. Course ID: %s User: %s' % (course_id, request.user.email)
     return HttpResponse(content)
 
+def hello_world(request):
+    return HttpResponse("Hello, World!")

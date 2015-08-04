@@ -12,18 +12,18 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from .secure import SECURE_SETTINGS
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'k3dtu7d0+jlg5&*3&s1wt8p_en$&kf2e1fd(ka@5xfo@$qv-bh'
+SECRET_KEY = SECURE_SETTINGS.get('django_secret_key', 'k3dtu7d0+jlg5&*3&s1wt8p_en$&kf2e1fd(ka@5xfo@$qv-bh')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = SECURE_SETTINGS.get('enable_debug', False)
 
 ALLOWED_HOSTS = []
 
@@ -58,7 +58,7 @@ AUTHENTICATION_BACKENDS = (
     'django_auth_lti.backends.LTIAuthBackend',
 )
 
-ROOT_URLCONF = 'skeleton.urls'
+ROOT_URLCONF = 'django_lti_skeleton.urls'
 
 TEMPLATES = [
     {
@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'skeleton.wsgi.application'
+WSGI_APPLICATION = 'django_lti_skeleton.wsgi.application'
 
 
 # Database
@@ -108,6 +108,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'http_static')
 
 # Add LTI configuration settings (for django-app-lti)
 LTI_SETUP = {

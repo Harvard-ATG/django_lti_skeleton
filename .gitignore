@@ -4,3 +4,5 @@
 *.pyc
 .env
 /venv/
+/http_static
+/django_lti_skeleton/settings/secure.py
